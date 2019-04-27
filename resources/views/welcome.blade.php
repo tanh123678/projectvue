@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 		]) !!};
 	</script>
 
-	<!-- BODY options, add following classes to body to change options
+	BODY options, add following classes to body to change options
 
     // Header options
     1. '.header-fixed'					- Fixed Header
@@ -33,10 +33,32 @@
     // Footer options
     1. '.footer-fixed'						- Fixed footer
 
-    -->
+   
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
 	<div id="app"></div>
   	<script src="{{ mix('js/app.js') }}"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Laravel</title>
+    <style>
+        .modal-content{
+            margin-top: 90px !important;
+        }
+    </style>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+        <div id="app">
+            @yield('content')
+            <Vuetable/>
+        </div>
+    <script src="/js/app.js"></script>
 </body>
 </html>

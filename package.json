@@ -19,15 +19,25 @@
         "lodash": "^4.17.4",
         "popper.js": "^1.12",
         "uglify-es": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
-        "vue": "^2.5.7"
+        "vue": "^2.5.7",
+        "vue-axios": "^2.1.4",
+        "vue-loader": "^14.x.x",
+        "vue-router": "^2.8.1",
+        "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "bootstrap-vue": "0.20.1",
+        "@deveodk/vue-toastr": "^1.0.4",
+        "@websanova/vue-auth": "^2.21.14-beta",
+        "bootstrap-vue": "^2.0.0-rc.18",
         "chart.js": "2.6.0",
         "font-awesome": "^4.7.0",
         "simple-line-icons": "^2.4.1",
         "vue-chartjs": "2.8.1",
-        "vue-router": "^2.7.0",
-        "vue-strap": "github:wffranco/vue-strap"
+        "vue-strap": "github:wffranco/vue-strap",
+        "vue-swal": "^1.0.0",
+        "vue-tables-2": "^1.4.70",
+        "vue-toasted": "^1.1.26",
+        "vue-toastr": "^2.0.16",
+        "vuetable-2": "^2.0.0-beta.4"
     }
 }

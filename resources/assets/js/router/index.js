@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
+
 // Containers
 import Full from '@/containers/Full'
 
@@ -25,8 +27,19 @@ import SimpleLineIcons from '@/views/icons/SimpleLineIcons'
 // Views - Pages
 import Page404 from '@/views/pages/Page404'
 import Page500 from '@/views/pages/Page500'
-import Login from '@/views/pages/Login'
+import Login from '@/containers/Login'
+import resetpassword from '@/containers/ResetPassword'
 import Register from '@/views/pages/Register'
+import ForgotPasword from '@/views/pages/ForgotPassword.vue'
+import ResetPassword from '@/views/pages/ResetPassword.vue'
+import InvalidToken from '@/views/pages/InvalidToken.vue'
+
+
+import RoleIndex from '@/components/roles/RoleIndex'
+import RolesCreate from '@/components/roles/RolesCreate'
+import RolesEdit from '@/components/roles/RolesEdit.vue'
+import UserIndex from '@/components/users/UserIndex'
+import PermissionIndex from '@/components/permissions/PermissionIndex'
 
 Vue.use(Router)
 
@@ -39,6 +52,7 @@ export default new Router({
       path: '/',
       redirect: '/dashboard',
       name: 'Home',
+      meta: {auth: true},
       component: Full,
       children: [
         {
@@ -51,6 +65,23 @@ export default new Router({
           name: 'Charts',
           component: Charts
         },
+        {
+          path: 'role',
+          name: 'role',
+          component: RoleIndex
+        },
+        {
+          path: 'user',
+          name: 'user',
+          component: UserIndex
+        },
+        {
+          path: 'permission',
+          name: 'permission',
+          component: PermissionIndex
+        },
+        {path: '/admin/roles/create', component: RolesCreate, name: 'createRole'},
+        {path: '/admin/roles/edit/:id', component: RolesEdit, name: 'editRole'},
         {
           path: 'widgets',
           name: 'Widgets',
@@ -150,8 +181,42 @@ export default new Router({
           path: 'register',
           name: 'Register',
           component: Register
+        },
+        {
+          path: '/invalid-token',
+          name: 'InvalidToken',
+          component: InvalidToken,
+          meta: {
+            auth: false
         }
+    },
+
       ]
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+       meta: {
+            auth: false
+        }
+    },
+     {
+      path: '/forgot-password',
+      name: 'ForgotPassword',
+      component: ForgotPasword,
+      meta: {
+        auth: false
+      }
+    },
+    {
+      path: '/reset-password/:token',
+      name: 'ResetPassword',
+      component: ResetPassword,
+      meta: {
+        auth: false
+      }
     }
+
   ]
 })
