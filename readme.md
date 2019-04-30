@@ -1,4 +1,4 @@
-how to i push : push myorigin master
+how i push : push myorigin master
 
 # Laravel 5.6 + CoreUI Admin Bootstrap Template VueJS
 
